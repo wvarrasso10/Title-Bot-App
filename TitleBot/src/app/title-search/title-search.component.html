@@ -41,6 +41,7 @@
 
         <div class="column">
           <label class="label">Search History</label>
+          <button class="button is-info"  (click)="clear()">Clear</button>
           <li class="headlines" *ngFor="let line of this.headlines">{{line}}</li>
         </div>
       </div>

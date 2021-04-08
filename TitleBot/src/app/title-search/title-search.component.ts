@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import {WebScraperService} from '../services/web-scraper.service';
 import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import { Subscription } from 'rxjs';
@@ -9,7 +9,6 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./title-search.component.css']
 })
 export class TitleSearchComponent {
-  dataFromServer: Subscription;
   url: string;
   form: FormGroup = new FormGroup({});
   headline: string;
@@ -26,14 +25,18 @@ export class TitleSearchComponent {
   submit(): void {
     this.FormatUrl();
     // subscribe to observable returned get request
-    this.dataFromServer = this.webService.getHeadline(this.url).subscribe(
+    this.webService.getHeadline(this.url).subscribe(
       res => {
-        this.dataFromServer = res;
-        console.log(this.dataFromServer);
-        this.headline = JSON.stringify(this.dataFromServer);
+        this.headline = JSON.stringify(res);
         this.headlines.push(this.headline);
       }
     );
+  }
+
+  clear(): void {
+    this.headlines = [];
+    this.headline = '';
+    this.form.value.reset();
   }
 
   private FormatUrl(): void {
@@ -42,7 +45,7 @@ export class TitleSearchComponent {
     this.url = this.url.replace(/^"(.+(?="$))"$/, '$1');
     this.url = this.url.match('(https?://)') ? this.url : 'https://' + this.url;
   }
-
+  // return abstract control form from headline input check check validity
   get f(): {[p: string]: AbstractControl} {
     return this.form.controls;
   }
