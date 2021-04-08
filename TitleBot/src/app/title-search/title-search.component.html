@@ -1,0 +1,50 @@
+<section class="hero is-primary is-bold is-fullheight">
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
+
+  <div class="hero-body">
+    <div class="container">
+
+      <p class="title">Search for Headline</p>
+
+      <div class="columns">
+        <div class="column">
+
+        <label class="label">Enter a Valid URL</label>
+
+          <div class="field has-addons">
+            <div class="control has-icons-left has-icons-right is-expanded">
+
+              <input [ngClass]="{'is-danger': form.invalid, 'is-success': form.valid}"
+                     formControlName="url" class="input " type="text" placeholder="Insert Url">
+
+              <span class="icon is-left">
+                <i class="fa fa-search"></i>
+              </span>
+
+              <div *ngIf="f.url.touched && f.url.invalid" class="help is-danger">
+                <div *ngIf="f.url.errors.required">URL is required.</div>
+                <div *ngIf="f.url.errors.pattern">Please enter valid url.</div>
+              </div>
+            </div>
+
+            <p class="control">
+              <button class="button is-info"  type="submit" [disabled]="!form.valid">Search</button>
+            </p>
+          </div>
+
+          <div class="container">
+            <label class="label">Search Results</label>
+            <p class="headline">{{this.headline}}</p>
+          </div>
+        </div>
+
+        <div class="column">
+          <label class="label">Search History</label>
+          <li class="headlines" *ngFor="let line of this.headlines">{{line}}</li>
+        </div>
+      </div>
+    </div>
+  </div>
+  </form>
+</section>
