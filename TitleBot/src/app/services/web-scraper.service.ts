@@ -9,7 +9,7 @@ import {WebPage} from '../models/web-page.model';
 })
 export class WebScraperService {
   formData!: WebPage;
-  readonly rootUrl = 'https://localhost:49159/api';
+  readonly rootUrl = 'https://localhost:5000/api';
   constructor(private http: HttpClient) { }
 
   getHeadline(Url: string): Observable<any> {

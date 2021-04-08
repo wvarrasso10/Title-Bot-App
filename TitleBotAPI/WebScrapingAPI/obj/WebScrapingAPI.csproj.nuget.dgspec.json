@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\wvarr\\source\\repos\\WebScrapingAPI\\WebScrapingAPI\\WebScrapingAPI.csproj": {}
+    "D:\\TitleBot\\TitleBotAPI\\WebScrapingAPI\\WebScrapingAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\wvarr\\source\\repos\\WebScrapingAPI\\WebScrapingAPI\\WebScrapingAPI.csproj": {
+    "D:\\TitleBot\\TitleBotAPI\\WebScrapingAPI\\WebScrapingAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\wvarr\\source\\repos\\WebScrapingAPI\\WebScrapingAPI\\WebScrapingAPI.csproj",
+        "projectUniqueName": "D:\\TitleBot\\TitleBotAPI\\WebScrapingAPI\\WebScrapingAPI.csproj",
         "projectName": "WebScrapingAPI",
-        "projectPath": "C:\\Users\\wvarr\\source\\repos\\WebScrapingAPI\\WebScrapingAPI\\WebScrapingAPI.csproj",
+        "projectPath": "D:\\TitleBot\\TitleBotAPI\\WebScrapingAPI\\WebScrapingAPI.csproj",
         "packagesPath": "C:\\Users\\wvarr\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\wvarr\\source\\repos\\WebScrapingAPI\\WebScrapingAPI\\obj\\",
+        "outputPath": "D:\\TitleBot\\TitleBotAPI\\WebScrapingAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
